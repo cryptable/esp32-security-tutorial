@@ -1,4 +1,4 @@
-# esp32-tutorial
+# ESP32 Security Tutorial
 
 ## Introduction
 
