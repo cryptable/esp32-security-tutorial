@@ -1,0 +1,50 @@
+esphome:
+  name: rc522
+  friendly_name: Deur 001
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# RC522 configuration
+spi:
+  clk_pin: GPIO18
+  miso_pin: GPIO19
+  mosi_pin: GPIO23
+
+rc522_spi:
+  cs_pin: GPIO05
+  reset_pin: GPIO21
+  on_tag:
+    then:
+      - homeassistant.tag_scanned: !lambda 'return x;'
+
+# LED to open the door
+light:
+  - platform: status_led
+    name: 'Door switch'
+    pin: GPIO12
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "xxx"
+
+ota:
+  - platform: esphome
+    password: "xxx"
+
+wifi:
+  ssid: !secret wifi_ssid_home
+  password: !secret wifi_password_home
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Rc522 Fallback Hotspot"
+    password: "xxx"
+
+captive_portal:
