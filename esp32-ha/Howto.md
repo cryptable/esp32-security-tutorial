@@ -51,7 +51,11 @@ Minimum recommended assignments:
 
 1. Select the **Home Assistant** Virtual Machine and press the *Start* button
 2. Observe the boot process of the Home Assistant Operating System.
-3. Once completed, you will be able to reach Home Assistant on homeassistant.local:8123.
+3. Once completed, you will be able to reach Home Assistant on [](http://homeassistant.local:8123).
+
+Now you can create an account (username/password) on the system, which you should remember ofcourse. Use Keepass2 to help you with these accounts.
+
+Visit the system and have a look around Home Assistant.
 
 When encountering any problem, check the Home Assistant web-site.
 
