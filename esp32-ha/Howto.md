@@ -94,6 +94,14 @@ If step 6 gives you problems, you can also download the firmware and write it us
 
 Now you ESP32 can connect to Home Assistant, but you RC522 is not yet configured.
 
+Add your new device to home assistant so you can perform automations.
+
+1) Goto *Settings*
+2) Select *Devices and Services*
+3) You see *Dear 001* in the discovered devices, click on **Add**
+
+Goto the seperate offline network of you IoT Devices: (*IOT-LOKAAL*)
+
 ### Configure the RC522
 
 For the configuration of your RC522 to your ESP32, you will need to build a new firmware with the configuration of RC522.
@@ -116,7 +124,8 @@ rc522_spi:
       - homeassistant.tag_scanned: !lambda 'return x;'
 ```
 
-3) Click on *INSTALL* and repeat step 6 from above.
+3) Click on *INSTALL*
+4) Select *Wirelessly* or repeat step 6 from above.
 
 ### Configure the LED as Door lock
 
