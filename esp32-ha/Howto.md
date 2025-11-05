@@ -102,7 +102,7 @@ Add your new device to home assistant so you can perform automations.
 
 Goto the seperate offline network of you IoT Devices: (*IOT-LOKAAL*)
 
-### Configure the RC522
+### Configure the RC522 using binary sensor
 
 For the configuration of your RC522 to your ESP32, you will need to build a new firmware with the configuration of RC522.
 
@@ -119,9 +119,14 @@ spi:
 rc522_spi:
   cs_pin: GPIO05
   reset_pin: GPIO21
-  on_tag:
-    then:
-      - homeassistant.tag_scanned: !lambda 'return x;'
+
+binary_sensor:
+  - platform: rc522
+    uid: E3-1C-97-AA
+    name: 'Card John'
+  - platform: rc522
+    uid: 1C-EF-EE-DC
+    name: 'Fob John'
 ```
 
 3) Click on *INSTALL*
@@ -158,3 +163,28 @@ So let's introduce an automation.
   6) Under Goals, click on *+ Devices* and select your device 'Deur 001'
   7) Click *Save*
   8) Give it a name and click *Save* again
+
+### Configure the RC522 using Tags in Home Assistant
+
+For the configuration of your RC522 to your ESP32, you will need to build a new firmware with the configuration of RC522.
+
+1) Click the *EDIT* button on your device
+2) This shows an YAML editor and you need to add the configuration define here under.
+
+```
+# RC522 configuration
+spi:
+  clk_pin: GPIO18
+  miso_pin: GPIO19
+  mosi_pin: GPIO23
+
+rc522_spi:
+  cs_pin: GPIO05
+  reset_pin: GPIO21
+  on_tag:
+    then:
+      - homeassistant.tag_scanned: !lambda 'return x;'
+```
+
+3) Click on *INSTALL*
+4) Select *Wirelessly* or repeat step 6 from above.
