@@ -144,6 +144,33 @@ light:
     pin: GPIO12
 ```
 
+### Automation using the binary sensors
+
+We created binary sensors and shall use them to configure an automation. You can create 2 automation:
+
+- one to open the door
+- one to close the door
+
+1) Select **Settings**
+2) Select **Devices and Services**
+3) Select **ESPHome**
+4) Select **Deur 001** device
+5) Click on the **+** on Automation card
+6) Click in **Use Device as Condition** and check the status is **Deur 001 Door switch is uitgeschakeld** 
+7) Click **Add Trigger**
+8) Select **Entity**
+9) Select **Status**
+10) In the Status section in the *Entity* field, search **Card John** and select it
+11) In the *From* field, select **Off**
+12) In the *To* field, select **On**
+13) In the main screen, click on **Add Action**
+14) Select **Device**
+15) In the *Device* section, select the **Deur 001** device
+16) Select the action **Deur 001 Door switch deactivate**
+17) Click on **Save**
+
+Make an automation to lock the door, when scanning the card again.
+
 ### Automation when Mifare Tag is Scanned
 
 When you keep your Tag (FOB or Card) in front of the scanner nothing happens, because Home Assistant hasn't been programmed yet to do something. You could see the tags which were scanned under *Settings* -> *Tags* 
