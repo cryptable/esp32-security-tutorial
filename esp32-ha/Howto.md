@@ -98,7 +98,7 @@ Add your new device to home assistant so you can perform automations.
 
 1) Goto *Settings*
 2) Select *Devices and Services*
-3) You see *Dear 001* in the discovered devices, click on **Add**
+3) You see *Deur 001* in the discovered devices, click on **Add**
 
 Goto the seperate offline network of you IoT Devices: (*IOT-LOKAAL*)
 
